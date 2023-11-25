@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Wish List</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+ <h1>Wish List</h1>
+ <form id="product-form">
+    <label for="product-name">Product Name:</label>
+    <input type="text" id="product-name" name="product-name" required>
+    <button type="submit">Add to Wish List</button>
+ </form>
+ <form id="existing-product-form">
+    <label for="existing-product-name">Existing Product Name:</label>
+    <input type="text" id="existing-product-name" name="existing-product-name">
+    <button type="submit">Remove from Wish List</button>
+ </form>
+ <ul id="wishlist"></ul>
+ <script src="scripts.js"></script>
+ <button id="load-wishlist">Load Wish List</button>
+</body>
+</html>
