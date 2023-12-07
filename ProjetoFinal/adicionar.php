@@ -20,10 +20,11 @@ $usuario_id = $_POST['usuario_id'];
 $descricao = $_POST['descricao'];
 
 // Inserir dados no banco de dados
-$sql = "INSERT INTO tabela_itens (id, nome, imagem, usuario_id, descricao) VALUES ('$id', '$nome', '$imagem', '$usuario_id', '$descricao')";
+$sql = "INSERT INTO itens (id, nome, imagem, id_do_usuario, descricao) VALUES ('$id', '$nome', '$imagem', '$usuario_id', '$descricao')";
 
 if ($conn->query($sql) === TRUE) {
     echo "Item adicionado com sucesso!";
+    header('Location: painel.php');
 } else {
     echo "Erro ao adicionar item: " . $conn->error;
 }
