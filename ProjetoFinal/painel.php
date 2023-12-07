@@ -78,6 +78,67 @@ include('protect.php');
     text-align: justify;
     color: black;
 }
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+.item {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.item h2 {
+    color: #333;
+}
+
+.item p {
+    color: #555;
+}
+
+/* Botão de voltar */
+.back-btn {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.back-btn a {
+    text-decoration: none;
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.back-btn a:hover {
+    background-color: #45a049;
+}
+
+
 </style>
 <body>
 <aside class="menu">
@@ -91,14 +152,11 @@ include('protect.php');
             </nav>
         </div>
     </aside>
-    <p class='boasvindas'>
-    Bem vindo ao Painel, <?php echo $_SESSION['nome']; ?>.
-    </p>
 </body>
 </html>
 
 <?php
-// Conectar ao banco de dados (substitua pelos seus próprios dados de conexão)
+// Conectar ao banco de dados
 $usuario = "root";
 $senha = "";
 $database = "projetofinal";
@@ -131,7 +189,7 @@ $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) {
             echo "<div class='item'>";
-            echo "<img src='https://drive.google.com/file/d/1EaZ8V9DAaLv9zMCF00wyEcnsQPEpqxmH/view?usp=sharing" . $row['imagem'] . "' alt='" . $row['nome'] . "'>";
+            echo "<img src='https://drive.google.com/uc?export=view&amp;id=". $row['imagem'] ."'>";
             echo "<h2>" . $row['nome'] . "</h2>";
             echo "<p><strong>Descrição:</strong> " . $row['descricao'] . "</p>";
             echo "</div>";
