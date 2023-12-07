@@ -194,10 +194,10 @@ $result = $conn->query($sql);
             echo "<p><strong>Descrição:</strong> " . $row['descricao'] . "</p>";
 
             echo "<form action='excluir_item.php' method='POST'>";
-                echo "<input type='hidden' name='item_id' value='" . $row['id'] . "'>";
+                echo "<input type='hidden' name='id_do_usuario' value='" . $row['id_do_usuario'] . "'>";
                 echo "<input type='submit' value='Excluir Item'>";
                 echo "</form>";
-                
+
             echo "</div>";
         }
     } else {
