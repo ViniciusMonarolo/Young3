@@ -192,6 +192,12 @@ $result = $conn->query($sql);
             echo "<img src='https://drive.google.com/uc?export=view&amp;id=". $row['imagem'] ."'>";
             echo "<h2>" . $row['nome'] . "</h2>";
             echo "<p><strong>Descrição:</strong> " . $row['descricao'] . "</p>";
+
+            echo "<form action='excluir_item.php' method='POST'>";
+                echo "<input type='hidden' name='item_id' value='" . $row['id'] . "'>";
+                echo "<input type='submit' value='Excluir Item'>";
+                echo "</form>";
+                
             echo "</div>";
         }
     } else {
